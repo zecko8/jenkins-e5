@@ -1,9 +1,14 @@
 pipeline {
   agent any
   stages{
-    stage('stage1'){
+    stage('check'){
       steps{
-        echo 'ciao da github'
+        sh 'ls'
+      }
+    }
+    stage('run'){
+      steps{
+        sh '/bin/bash test.sh'
       }
     }
   }
